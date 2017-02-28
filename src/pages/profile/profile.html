@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Profile {{displayName}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngIf="photoURL">
+    <img src="{{photoURL}}" alt="fb display name">
+  </ion-list>
+  <ion-list *ngIf="!displayName">
+    <button ion-button outline (click)="login()">Login with Facebook</button>
+  </ion-list>
+  <ion-list *ngIf="displayName">
+    <button ion-button outline (click)="logout()">Logout</button>
+  </ion-list>
+</ion-content>
+
